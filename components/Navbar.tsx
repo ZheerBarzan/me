@@ -41,20 +41,21 @@ const Navbar: React.FC = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-                <div className="flex gap-8 text-sm font-medium text-zinc-500 dark:text-zinc-400">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={(e) => handleScroll(e, link.href)}
-                            className="hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300 cursor-pointer"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                </div>
+            <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8 text-sm font-medium text-zinc-500 dark:text-zinc-400">
+                {navLinks.map((link) => (
+                    <a
+                        key={link.name}
+                        href={link.href}
+                        onClick={(e) => handleScroll(e, link.href)}
+                        className="hover:text-red-600 dark:hover:text-red-500 transition-colors duration-300 cursor-pointer"
+                    >
+                        {link.name}
+                    </a>
+                ))}
+            </div>
 
+            {/* Desktop Theme Toggle */}
+            <div className="hidden md:flex items-center gap-4">
                 <button
                     onClick={toggleTheme}
                     className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
