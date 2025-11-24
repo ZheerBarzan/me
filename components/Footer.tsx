@@ -1,6 +1,16 @@
 import React from 'react';
 import { ArrowUpRight, Github, Linkedin, Mail, MessageCircle, Dribbble } from 'lucide-react';
 
+/**
+ * SocialButton Component
+ * 
+ * A reusable button for social media links.
+ * 
+ * Props:
+ * - icon: ReactNode - The social media icon.
+ * - label: string - The name of the platform.
+ * - href: string - The URL to link to.
+ */
 const SocialButton: React.FC<{ icon: React.ReactNode; label: string; href: string }> = ({ icon, label, href }) => (
     <a href={href} className="flex items-center justify-between w-full p-5 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl hover:bg-white dark:hover:bg-zinc-900 hover:border-red-600 dark:hover:border-red-600 transition-all group">
         <div className="flex items-center gap-5">
@@ -11,12 +21,19 @@ const SocialButton: React.FC<{ icon: React.ReactNode; label: string; href: strin
     </a>
 )
 
+/**
+ * Footer Component
+ * 
+ * The footer of the application.
+ * Contains a call to action, contact info, social links, and copyright details.
+ */
 const Footer: React.FC = () => {
     return (
         <footer className="w-full bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white pt-32 pb-12 px-6 md:px-12 border-t border-zinc-100 dark:border-zinc-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32">
+                    {/* Call to Action Column */}
                     <div className="lg:col-span-7">
                         <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-10 leading-[0.9] text-zinc-900 dark:text-white">
                             Let's <br /> <span className="text-red-600">Connect.</span>
@@ -25,6 +42,7 @@ const Footer: React.FC = () => {
                             I'm always interested in hearing about new projects and opportunities. Drop a line and let's create something exceptional.
                         </p>
 
+                        {/* Profile Card / Contact Box */}
                         <div className="bg-zinc-50 dark:bg-zinc-900 p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 inline-flex flex-col sm:flex-row items-center gap-8 hover:border-red-200 dark:hover:border-red-900/50 transition-colors">
                             <div className="relative">
                                 <img src="https://picsum.photos/seed/zheerprofile/200/200" className="w-24 h-24 rounded-full object-cover border-4 border-white dark:border-zinc-800" alt="Zheer" />
@@ -41,6 +59,7 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* Social Links Column */}
                     <div className="lg:col-span-5 flex flex-col justify-center space-y-4">
                         <div className="flex items-center gap-2 mb-4">
                             <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
@@ -53,6 +72,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Copyright and Legal Links */}
                 <div className="pt-12 border-t border-zinc-100 dark:border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex items-center gap-2">
                         <span className="bg-zinc-900 dark:bg-white text-white dark:text-black w-6 h-6 flex items-center justify-center rounded text-xs font-bold">Z</span>
