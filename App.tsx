@@ -3,10 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import AIChat from './components/AIChat';
 import Home from './pages/Home';
-import About from './pages/About';
-import ExperiencePage from './pages/ExperiencePage';
-import WorkPage from './pages/WorkPage';
-import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -17,10 +13,7 @@ function App() {
         <main className="pt-24 relative w-full max-w-[100vw] overflow-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<ExperiencePage />} />
-            <Route path="/work" element={<WorkPage />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
 
