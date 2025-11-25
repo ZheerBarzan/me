@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import WorkPage from './pages/WorkPage';
 
 /**
  * App Component
@@ -43,9 +44,11 @@ function App() {
             {/* 
               Route Definitions:
               - /: Renders the Home component (Single Page Application style).
+              - /work: Renders the WorkPage component (All Projects).
               - *: Catch-all route that redirects to Home for any unknown paths.
             */}
             <Route path="/" element={<Home />} />
+            <Route path="/work" element={<WorkPage />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>

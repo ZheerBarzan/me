@@ -1,11 +1,12 @@
 import React from 'react';
 import { ArrowUpRight, Github, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 /**
  * Interface for Project Props
  * Defines the structure for project data passed to the ProjectCard component.
  */
-interface ProjectProps {
+export interface ProjectProps {
     name: string;
     description: string;
     tags: string[];
@@ -18,7 +19,7 @@ interface ProjectProps {
  * Displays a single project with an image, description, tags, and links.
  * Features hover effects for the image and "View Project" button.
  */
-const ProjectCard: React.FC<ProjectProps> = ({ name, description, tags, image }) => (
+export const ProjectCard: React.FC<ProjectProps> = ({ name, description, tags, image }) => (
     <div className="group relative w-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-red-200 dark:hover:border-red-900 hover:shadow-2xl hover:shadow-red-900/5 transition-all duration-500 flex flex-col">
         {/* Image Container with Hover Overlay */}
         <div className="h-[280px] overflow-hidden relative bg-zinc-100 dark:bg-zinc-800">
@@ -75,9 +76,9 @@ const Work: React.FC = () => {
                         <h2 className="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 dark:text-white">Selected Work<span className="text-red-600">.</span></h2>
                     </div>
                     {/* View All Button */}
-                    <button className="mt-6 md:mt-0 text-sm font-semibold border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white px-8 py-4 rounded-full hover:border-red-600 hover:bg-red-600 hover:text-white transition-all flex items-center gap-2 group">
+                    <Link to="/work" className="mt-6 md:mt-0 text-sm font-semibold border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white px-8 py-4 rounded-full hover:border-red-600 hover:bg-red-600 hover:text-white transition-all flex items-center gap-2 group">
                         View all repositories <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Projects Grid */}
