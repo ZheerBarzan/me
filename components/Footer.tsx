@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                         {/* Profile Card / Contact Box */}
                         <div className="bg-zinc-50 dark:bg-zinc-900 p-8 rounded-3xl border border-zinc-200 dark:border-zinc-800 inline-flex flex-col sm:flex-row items-center gap-8 hover:border-red-200 dark:hover:border-red-900/50 transition-colors">
                             <div className="relative">
-                                <img src="https://picsum.photos/seed/zheerprofile/200/200" className="w-24 h-24 rounded-full object-cover border-4 border-white dark:border-zinc-800" alt="Zheer" />
+                                <img src="public/images/personal/IMG_0098.JPG" className="w-24 h-24 rounded-full object-cover border-4 border-white dark:border-zinc-800" alt="Zheer" />
                                 <div className="absolute bottom-1 right-1 w-5 h-5 bg-red-600 rounded-full border-4 border-zinc-50 dark:border-zinc-900"></div>
                             </div>
                             <div>
@@ -79,11 +79,6 @@ const Footer: React.FC = () => {
                         <p className="text-zinc-500 dark:text-zinc-500 text-sm font-medium">
                             © 2025 Zheer Barzan.
                         </p>
-                    </div>
-
-                    <div className="flex gap-8 text-sm font-semibold text-zinc-500 dark:text-zinc-500">
-                        <a href="#" className="hover:text-red-600 dark:hover:text-red-500 transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-red-600 dark:hover:text-red-500 transition-colors">Terms & Conditions</a>
                     </div>
                 </div>
             </div>

@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
 
               {/* Profile Image */}
               <img
-                src="https://picsum.photos/seed/zheerprofile/1000/1200"
+                src="public/images/personal/IMG_1495.JPG"
                 alt="Zheer Barzan"
                 className="w-full h-full object-cover relative z-10 mix-blend-multiply dark:mix-blend-normal grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
               />
