@@ -64,16 +64,7 @@ const Hero: React.FC = () => {
               />
 
               {/* Floating Experience Badge */}
-              <div className="absolute bottom-6 left-6 right-6 md:right-auto md:bottom-8 md:-left-8 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl px-6 py-4 rounded-xl border border-white dark:border-zinc-800 shadow-xl z-20 flex items-center gap-4 transform md:group-hover:translate-x-4 transition-transform duration-500">
-                <div className="relative shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-500 font-bold text-lg">5+</div>
-                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white dark:border-zinc-900"></div>
-                </div>
-                <div>
-                  <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Experience</p>
-                  <p className="font-bold text-zinc-900 dark:text-white whitespace-nowrap">Years Working</p>
-                </div>
-              </div>
+              
             </div>
 
             {/* Decorative Background Blurs */}
