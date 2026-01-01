@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, Github, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import projects from '../data/projects.json';
 /**
  * Interface for Project Props
  * Defines the structure for project data passed to the ProjectCard component.
@@ -83,30 +83,17 @@ const Work: React.FC = () => {
 
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                   
+                   {/* limit projects to 4 */}
+                   {projects.slice(0, 4).map((project, index) => (
                     <ProjectCard
-                        name="Project Music"
-                        description="A sophisticated Music Player with neumorphic UI Design and advanced playlist management."
-                        tags={["Flutter", "Dart", "Audio"]}
-                        image="https://picsum.photos/seed/musicapp/800/600"
+                        key={index}
+                        name={project.name}
+                        description={project.description}
+                        tags={project.tags}
+                        image={project.image}
                     />
-                    <ProjectCard
-                        name="Expense Tracker"
-                        description="Comprehensive finance management tool to track daily expenses with visual analytics."
-                        tags={["Flutter", "Dart", "ISAR Database", "Charts"]}
-                        image="https://picsum.photos/seed/finance/800/600"
-                    />
-                    <ProjectCard
-                        name="Project Tasks"
-                        description="A productivity focused Task Manager application for organizing daily workflows."
-                        tags={["Flutter", "Dart", "Local Storage"]}
-                        image="https://picsum.photos/seed/tasks/800/600"
-                    />
-                    <ProjectCard
-                        name="News App"
-                        description="Real-time news aggregation application fetching global headlines via API."
-                        tags={["Flutter", "REST API", "State Management"]}
-                        image="https://picsum.photos/seed/news/800/600"
-                    />
+                   ))}
                 </div>
             </div>
         </section>

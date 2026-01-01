@@ -62,9 +62,6 @@ const Hero: React.FC = () => {
                 alt="Zheer Barzan"
                 className="w-full h-full object-cover relative z-10 mix-blend-multiply dark:mix-blend-normal grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
               />
-
-              {/* Floating Experience Badge */}
-              
             </div>
 
             {/* Decorative Background Blurs */}
