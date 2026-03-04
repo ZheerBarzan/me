@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
               Z
             </span>
             <p className="text-zinc-500 dark:text-zinc-500 text-sm font-medium">
-              © 2025 Zheer Barzan.
+              © 2026 Zheer Barzan.
             </p>
           </div>
         </div>

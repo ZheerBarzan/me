@@ -1,15 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import WorkPage from './pages/WorkPage';
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import WorkPage from "./pages/WorkPage";
+import { Analytics } from "@vercel/analytics/react";
 /**
  * App Component
- * 
+ *
  * The main component of the application. It sets up the routing,
  * global layout, and theme context for the entire app.
- * 
+ *
  * Features:
  * - Wraps the application in BrowserRouter for client-side routing.
  * - Applies global styles for dark mode and selection colors.
@@ -29,7 +29,6 @@ function App() {
         - transition-colors: Enables smooth transitions when switching themes.
       */}
       <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white selection:bg-red-500 selection:text-white font-sans overflow-x-hidden transition-colors duration-300">
-
         {/* Persistent Navigation Bar */}
         <Navbar />
 
@@ -51,6 +50,7 @@ function App() {
             <Route path="/work" element={<WorkPage />} />
             <Route path="*" element={<Home />} />
           </Routes>
+          <Analytics />
         </main>
       </div>
     </Router>
