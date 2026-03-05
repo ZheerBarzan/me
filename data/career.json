@@ -1,9 +1,23 @@
 [
   {
-    "icon": "{<GraduationCap size={24} />}",
+    "icon": "{<Briefcase size={24} />}",
+    "title": "IT Support Supervior",
+    "subtitle": "American University of Iraq, Sulaimani (AUIS)",
+    "description": "Leading a team of IT support specialists, managing IT infrastructure, and providing technical support to students and faculty.",
+    "year": "2025 - Present"
+  },
+  {
+    "icon": "{<Briefcase size={24} />}",
     "title": "Software Engineer",
-    "subtitle": "Google",
-    "description": "Working on Google Search",
-    "year": "2022 - Present"
+    "subtitle": "KingForce Security Company",
+    "description": "Developing secure internal systems and managing software infrastructure for security operations.",
+    "year": "2024 - 2025"
+  },
+  {
+    "icon": "{<Briefcase size={24} />}",
+    "title": "ICT Instructor",
+    "subtitle": "British International School (BIS)",
+    "description": "Teaching computer science fundamentals and programming concepts to students.",
+    "year": "2022 - 2023"
   }
 ]

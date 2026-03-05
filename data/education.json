@@ -1,9 +1,30 @@
 [
   {
     "icon": "{<GraduationCap size={24} />}",
-    "title": "Software Engineer",
-    "subtitle": "Google",
-    "description": "Working on Google Search",
-    "year": "2022 - Present"
+    "title": "MSc. Software Engineering",
+    "subtitle": "University of Kurdistan - Hawler (UKH)",
+    "description": "Specialized in advanced software architecture and distributed systems.",
+    "year": "2023 - 2025"
+  },
+  {
+    "icon": "{<GraduationCap size={24} />}",
+    "title": "BSc. Computer Engineering",
+    "subtitle": "Komar University of Science and Technology (KUST)",
+    "description": "Graduated with honors, specialized in Computer Engineering.",
+    "year": "2018 - 2022"
+  },
+  {
+    "icon": "{<Award size={24} />}",
+    "title": "Top 1st Student",
+    "subtitle": "University of Kurdistan - Hawler (UKH)",
+    "description": "Graduated as the top ranking student in the Software Engineering department at UKH.",
+    "year": "2025"
+  },
+  {
+    "icon": "{<Award size={24} />}",
+    "title": "Top 1st Student",
+    "subtitle": "Komar University of Science and Technology (KUST)",
+    "description": "Graduated as the top ranking student in the Computer Engineering department at KUST.",
+    "year": "2022"
   }
 ]

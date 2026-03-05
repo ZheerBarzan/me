@@ -86,39 +86,23 @@ const Experience: React.FC = () => {
               <span className="w-8 h-1 bg-red-600 rounded-full"></span>{" "}
               Education
             </h3>
-            {education.slice(0, 4).map((edu, index) => (
+
+            {/* Education Card */}
+            {education.map((edu) => (
               <Card
-                key={index}
-                icon={edu.icon}
+                icon={
+                  edu.icon === "{<GraduationCap size={24} />}" ? (
+                    <GraduationCap size={24} />
+                  ) : (
+                    <Award size={24} />
+                  )
+                }
                 title={edu.title}
                 subtitle={edu.subtitle}
                 description={edu.description}
                 year={edu.year}
               />
             ))}
-            <Card
-              icon={<GraduationCap size={24} />}
-              title="MSc. Software Engineering"
-              subtitle="University of Kurdistan - Hawler"
-              description="Specialized in advanced software architecture and distributed systems."
-              year="2021 - 2023"
-            />
-
-            <Card
-              icon={<GraduationCap size={24} />}
-              title="BSc. Computer Engineering"
-              subtitle="Komar University (KUST)"
-              description="Foundation in hardware-software integration and computer science principles."
-              year="2016 - 2020"
-            />
-
-            <Card
-              icon={<Award size={24} />}
-              title="Top 1st Student"
-              subtitle="Achievement"
-              description="Graduated as the top ranking student in the Computer Engineering department at KUST."
-              year="2020"
-            />
           </div>
 
           {/* Experience Column */}
@@ -128,28 +112,21 @@ const Experience: React.FC = () => {
               Career
             </h3>
 
-            <Card
-              icon={<Briefcase size={24} />}
-              title="Software Engineer"
-              subtitle="KingForce Security Company"
-              description="Developing secure internal systems and managing software infrastructure for security operations."
-              year="2023 - Present"
-            />
-
-            <Card
-              icon={<Briefcase size={24} />}
-              title="ICT Instructor"
-              subtitle="British International School (BIS)"
-              description="Teaching computer science fundamentals and programming concepts to students."
-              year="2021 - 2023"
-            />
+            {career.map((career) => (
+              <Card
+                icon={<Briefcase size={24} />}
+                title={career.title}
+                subtitle={career.subtitle}
+                description={career.description}
+                year={career.year}
+              />
+            ))}
 
             {/* Decorative Quote Card */}
             <div className="bg-zinc-900 dark:bg-zinc-950 rounded-2xl p-8 text-white min-h-[220px] flex flex-col justify-center relative overflow-hidden group border border-zinc-800">
               <div className="relative z-10">
                 <p className="text-lg font-medium italic text-zinc-300 mb-4">
-                  "Always ready to face the challenges coming my way and solve
-                  them easily."
+                  "don't limit your challenges, challenge your limits"
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-[1px] bg-red-600"></div>
