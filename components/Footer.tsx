@@ -97,29 +97,34 @@ const Footer: React.FC = () => {
                 Socials
               </h3>
             </div>
+            {/* Social Links should open in new tab */}
             <SocialButton
               icon={<Instagram size={22} />}
               label="Instagram"
               href="https://www.instagram.com/zheer_barzan/"
               target="_blank"
+              rel="noopener noreferrer"
             />
             <SocialButton
               icon={<Linkedin size={22} />}
               label="LinkedIn"
               href="https://www.linkedin.com/in/zheer-barzan-80aba5207/"
               target="_blank"
+              rel="noopener noreferrer"
             />
             <SocialButton
               icon={<Github size={22} />}
               label="GitHub"
               href="https://github.com/ZheerBarzan"
               target="_blank"
+              rel="noopener noreferrer"
             />
             <SocialButton
               icon={<MessageCircle size={22} />}
               label="WhatsApp"
               href="https://wa.me/+9647700355333"
               target="_blank"
+              rel="noopener noreferrer"
             />
           </div>
         </div>
