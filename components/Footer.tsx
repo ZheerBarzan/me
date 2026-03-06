@@ -6,6 +6,7 @@ import {
   Mail,
   MessageCircle,
   Dribbble,
+  Instagram,
 } from "lucide-react";
 
 /**
@@ -80,10 +81,10 @@ const Footer: React.FC = () => {
               </div>
               <div className="h-px w-full sm:w-px sm:h-16 bg-zinc-200 dark:bg-zinc-800"></div>
               <a
-                href="mailto:hello@zheer.dev"
+                href="mailto:zheerbarzan85@outlook.com"
                 className="text-2xl font-bold text-zinc-900 dark:text-white hover:text-red-600 dark:hover:text-red-500 transition-colors"
               >
-                hello@zheer.dev
+                zheerbarzan85@outlook.com
               </a>
             </div>
           </div>
@@ -97,20 +98,24 @@ const Footer: React.FC = () => {
               </h3>
             </div>
             <SocialButton
+              icon={<Instagram size={22} />}
+              label="Instagram"
+              href="#https://www.instagram.com/zheer_barzan/"
+            />
+            <SocialButton
               icon={<Linkedin size={22} />}
               label="LinkedIn"
-              href="#"
+              href="#https://www.linkedin.com/in/zheer-barzan-80aba5207/"
             />
-            <SocialButton icon={<Github size={22} />} label="GitHub" href="#" />
+            <SocialButton
+              icon={<Github size={22} />}
+              label="GitHub"
+              href="#https://github.com/ZheerBarzan"
+            />
             <SocialButton
               icon={<MessageCircle size={22} />}
               label="WhatsApp"
-              href="#"
-            />
-            <SocialButton
-              icon={<Dribbble size={22} />}
-              label="Behance"
-              href="#"
+              href="https://wa.me/+9647700355333"
             />
           </div>
         </div>
