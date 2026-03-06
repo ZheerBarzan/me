@@ -49,9 +49,14 @@ const Hero: React.FC = () => {
                 Download CV{" "}
                 <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </button>
+              {/* View Github Button when i click on it it will open my github */}
               <button className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white px-8 py-4 rounded-xl font-semibold hover:border-red-200 hover:bg-red-50 dark:hover:bg-zinc-800 hover:text-red-600 dark:hover:text-red-500 transition-all group flex items-center gap-2">
                 View Github{" "}
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowUpRight
+                  href="https://github.com/ZheerBarzan"
+                  target="_blank"
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                />
               </button>
             </div>
           </div>
