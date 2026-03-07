@@ -24,6 +24,8 @@ export const ProjectCard: React.FC<ProjectProps> = ({
   description,
   tags,
   image,
+  link,
+  github_link,
 }) => (
   <div className="group relative w-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-red-200 dark:hover:border-red-900 hover:shadow-2xl hover:shadow-red-900/5 transition-all duration-500 flex flex-col">
     {/* Image Container with Hover Overlay */}
@@ -35,9 +37,14 @@ export const ProjectCard: React.FC<ProjectProps> = ({
       />
       {/* Overlay that appears on hover */}
       <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-        <div className="bg-red-600 text-white px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-red-600 text-white px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+        >
           View Project
-        </div>
+        </a>
       </div>
     </div>
 
@@ -49,7 +56,9 @@ export const ProjectCard: React.FC<ProjectProps> = ({
         </h3>
         {/* Github Link */}
         <a
-          href="#"
+          href={github_link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:rotate-12"
         >
           <Github size={18} />

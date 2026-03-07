@@ -3,7 +3,7 @@
     "name": "QR-Codism",
     "description": "A Easy to Use QR Code Generator and Scanner with neumorphic UI Design.",
     "tags": ["Nuxt.js", "Vue.js", "Tailwind CSS"],
-    "image": "/images/Projects/QRcodism.pngs",
+    "image": "images/Projects/QRcodism.png",
     "link": "https://qr-codism.vercel.app/",
     "github_link": "https://github.com/ZheerBarzan/QRcodism"
   },
