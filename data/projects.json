@@ -1,91 +1,59 @@
 [
-    {
-        "name": "Project Music",
-        "description": "A sophisticated Music Player with neumorphic UI Design and advanced playlist management.",
-        "tags": [
-            "Flutter",
-            "Dart",
-            "Audio"
-        ],
-        "image": "https://picsum.photos/seed/musicapp/800/600",
-        "link": "#"
-    },
-    {
-        "name": "Expense Tracker",
-        "description": "Comprehensive finance management tool to track daily expenses with visual analytics.",
-        "tags": [
-            "Flutter",
-            "Dart",
-            "ISAR Database",
-            "Charts"
-        ],
-        "image": "https://picsum.photos/seed/finance/800/600",
-        "link": "#"
-    },
-    {
-        "name": "Project Tasks",
-        "description": "A productivity focused Task Manager application for organizing daily workflows.",
-        "tags": [
-            "Flutter",
-            "Dart",
-            "Local Storage"
-        ],
-        "image": "https://picsum.photos/seed/tasks/800/600",
-        "link": "#"
-    },
-    {
-        "name": "News App",
-        "description": "Real-time news aggregation application fetching global headlines via API.",
-        "tags": [
-            "Flutter",
-            "REST API",
-            "State Management"
-        ],
-        "image": "https://picsum.photos/seed/news/800/600",
-        "link": "#"
-    },
-    {
-        "name": "E-Commerce App",
-        "description": "A full-featured shopping application with cart, payment integration, and order tracking.",
-        "tags": [
-            "React Native",
-            "Redux",
-            "Stripe"
-        ],
-        "image": "https://picsum.photos/seed/ecommerce/800/600",
-        "link": "#"
-    },
-    {
-        "name": "Social Media Dashboard",
-        "description": "Analytics dashboard for tracking social media engagement across multiple platforms.",
-        "tags": [
-            "React",
-            "D3.js",
-            "Node.js"
-        ],
-        "image": "https://picsum.photos/seed/social/800/600",
-        "link": "#"
-    },
-    {
-        "name": "Weather Forecast",
-        "description": "Beautiful weather app with animated backgrounds and detailed forecast data.",
-        "tags": [
-            "Swift",
-            "SwiftUI",
-            "WeatherKit"
-        ],
-        "image": "https://picsum.photos/seed/weather/800/600",
-        "link": "#"
-    },
-    {
-        "name": "Fitness Tracker",
-        "description": "Workout companion app for tracking exercises, sets, and personal records.",
-        "tags": [
-            "Kotlin",
-            "Jetpack Compose",
-            "Room"
-        ],
-        "image": "https://picsum.photos/seed/fitness/800/600",
-        "link": "#"
-    }
+  {
+    "name": "QR-Codism",
+    "description": "A Easy to Use QR Code Generator and Scanner with neumorphic UI Design.",
+    "tags": ["Nuxt.js", "Vue.js", "Tailwind CSS"],
+    "image": "/images/Projects/QRcodism.pngs",
+    "link": "https://qr-codism.vercel.app/",
+    "github_link": "https://github.com/ZheerBarzan/QRcodism"
+  },
+  {
+    "name": "Expense Tracker",
+    "description": "Comprehensive finance management tool to track daily expenses with visual analytics.",
+    "tags": ["Flutter", "Dart", "ISAR Database", "Charts"],
+    "image": "https://picsum.photos/seed/finance/800/600",
+    "link": "#"
+  },
+  {
+    "name": "Project Tasks",
+    "description": "A productivity focused Task Manager application for organizing daily workflows.",
+    "tags": ["Flutter", "Dart", "Local Storage"],
+    "image": "https://picsum.photos/seed/tasks/800/600",
+    "link": "#"
+  },
+  {
+    "name": "News App",
+    "description": "Real-time news aggregation application fetching global headlines via API.",
+    "tags": ["Flutter", "REST API", "State Management"],
+    "image": "https://picsum.photos/seed/news/800/600",
+    "link": "#"
+  },
+  {
+    "name": "E-Commerce App",
+    "description": "A full-featured shopping application with cart, payment integration, and order tracking.",
+    "tags": ["React Native", "Redux", "Stripe"],
+    "image": "https://picsum.photos/seed/ecommerce/800/600",
+    "link": "#"
+  },
+  {
+    "name": "Social Media Dashboard",
+    "description": "Analytics dashboard for tracking social media engagement across multiple platforms.",
+    "tags": ["React", "D3.js", "Node.js"],
+    "image": "https://picsum.photos/seed/social/800/600",
+    "link": "#"
+  },
+  {
+    "name": "Weather Forecast",
+    "description": "Beautiful weather app with animated backgrounds and detailed forecast data.",
+    "tags": ["Swift", "SwiftUI", "WeatherKit"],
+    "image": "https://picsum.photos/seed/weather/800/600",
+    "link": "#"
+  },
+  {
+    "name": "Fitness Tracker",
+    "description": "Workout companion app for tracking exercises, sets, and personal records.",
+    "tags": ["Kotlin", "Jetpack Compose", "Room"],
+    "image": "https://picsum.photos/seed/fitness/800/600",
+    "link": "#"
+  }
 ]

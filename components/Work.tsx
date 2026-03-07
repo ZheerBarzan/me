@@ -117,6 +117,8 @@ const Work: React.FC = () => {
               description={project.description}
               tags={project.tags}
               image={project.image}
+              link={project.link}
+              github_link={project.github_link}
             />
           ))}
         </div>
