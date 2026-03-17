@@ -52,6 +52,7 @@ const WorkPage: React.FC = () => {
               image={project.image}
               link={project.link}
               github_link={project.github_link}
+              platforms={project.platforms}
             />
           ))}
         </div>

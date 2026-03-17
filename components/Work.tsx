@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Github, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Github, ArrowRight, Globe, Apple, Smartphone, Monitor } from "lucide-react";
 import { Link } from "react-router-dom";
 import projects from "../data/projects.json";
 /**
@@ -11,6 +11,15 @@ export interface ProjectProps {
   description: string;
   tags: string[];
   image: string;
+  link?: string;
+  github_link?: string;
+  platforms?: {
+    web?: string;
+    ios?: string;
+    android?: string;
+    windows?: string;
+    mac?: string;
+  };
 }
 
 /**
@@ -26,6 +35,7 @@ export const ProjectCard: React.FC<ProjectProps> = ({
   image,
   link,
   github_link,
+  platforms,
 }) => (
   <div className="group relative w-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-red-200 dark:hover:border-red-900 hover:shadow-2xl hover:shadow-red-900/5 transition-all duration-500 flex flex-col">
     {/* Image Container with Hover Overlay */}
@@ -37,14 +47,16 @@ export const ProjectCard: React.FC<ProjectProps> = ({
       />
       {/* Overlay that appears on hover */}
       <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-red-600 text-white px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-        >
-          View Project
-        </a>
+        {(link || platforms?.web || platforms?.ios || platforms?.android || platforms?.windows || platforms?.mac) && (
+          <a
+            href={link || platforms?.web || platforms?.ios || platforms?.android || platforms?.windows || platforms?.mac}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 text-white px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+          >
+            View Project
+          </a>
+        )}
       </div>
     </div>
 
@@ -54,15 +66,27 @@ export const ProjectCard: React.FC<ProjectProps> = ({
         <h3 className="text-2xl font-bold text-zinc-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors">
           {name}
         </h3>
-        {/* Github Link */}
-        <a
-          href={github_link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:rotate-12"
-        >
-          <Github size={18} />
-        </a>
+        {/* Links */}
+        <div className="flex gap-2">
+          {platforms?.web && (
+            <a href={platforms.web} title="Web" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:-translate-y-1"><Globe size={18} /></a>
+          )}
+          {platforms?.ios && (
+            <a href={platforms.ios} title="iOS" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:-translate-y-1"><Apple size={18} /></a>
+          )}
+          {platforms?.android && (
+            <a href={platforms.android} title="Android" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:-translate-y-1"><Smartphone size={18} /></a>
+          )}
+          {platforms?.windows && (
+            <a href={platforms.windows} title="Windows" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:-translate-y-1"><Monitor size={18} /></a>
+          )}
+          {platforms?.mac && (
+            <a href={platforms.mac} title="Mac" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:-translate-y-1"><Apple size={18} /></a>
+          )}
+          {github_link && (
+            <a href={github_link} title="GitHub" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-zinc-50 dark:bg-zinc-800 text-zinc-400 rounded-full hover:bg-red-600 hover:text-white transition-all hover:rotate-12"><Github size={18} /></a>
+          )}
+        </div>
       </div>
 
       <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-8 line-clamp-2 leading-relaxed">
@@ -128,6 +152,7 @@ const Work: React.FC = () => {
               image={project.image}
               link={project.link}
               github_link={project.github_link}
+              platforms={project.platforms}
             />
           ))}
         </div>
