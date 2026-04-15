@@ -29,86 +29,45 @@
     }
   },
   {
-    "name": "Project Tasks",
+    "name": "AUIS-Flowchart",
     "description": "A productivity focused Task Manager application for organizing daily workflows.",
+    "tags": [
+      "Nuxt.js",
+      "Tailwind CSS"
+    ],
+    "image": "images/Projects/AUIS-Flowchart.png",
+    "platforms": {
+      "web": "https://auis-flowchart.zheerbarzan.dev/"
+    }
+  },
+  {
+    "name": "Habitology",
+    "description": "A Habit Tracking application with Github heatmap UI Design.",
     "tags": [
       "Flutter",
       "Dart",
       "Local Storage"
     ],
-    "image": "https://picsum.photos/seed/tasks/800/600",
-    "platforms": {
-      "windows": "https://www.microsoft.com/store/productId/12345",
-      "mac": "https://apps.apple.com/mac/app/id123456789"
-    }
-  },
-  {
-    "name": "News App",
-    "description": "Real-time news aggregation application fetching global headlines via API.",
-    "tags": [
-      "Flutter",
-      "REST API",
-      "State Management"
-    ],
-    "image": "https://picsum.photos/seed/news/800/600",
+    "image": "images/Projects/Habitology.png",
     "platforms": {
       "ios": "https://apps.apple.com/app/id111111",
       "android": "https://play.google.com/store/apps/details?id=news.app",
-      "web": "https://newsapp.example.com"
+      "web": "https://newsapp.example.com",
+      "windows": "https://www.microsoft.com/store/productId/12345"
     }
   },
   {
-    "name": "E-Commerce App",
-    "description": "A full-featured shopping application with cart, payment integration, and order tracking.",
+    "name": "Flagology",
+    "description": " A guess the Flag game to test your Geography",
     "tags": [
-      "React Native",
-      "Redux",
-      "Stripe"
+      "Flutter",
+      "Dart"
     ],
-    "image": "https://picsum.photos/seed/ecommerce/800/600",
+    "image": "images/Projects/Flagology.png",
     "platforms": {
       "ios": "https://apps.apple.com/app/id222222",
-      "android": "https://play.google.com/store/apps/details?id=shop.app"
-    }
-  },
-  {
-    "name": "Social Media Dashboard",
-    "description": "Analytics dashboard for tracking social media engagement across multiple platforms.",
-    "tags": [
-      "React",
-      "D3.js",
-      "Node.js"
-    ],
-    "image": "https://picsum.photos/seed/social/800/600",
-    "platforms": {
-      "web": "https://dashboard.example.com"
-    }
-  },
-  {
-    "name": "Weather Forecast",
-    "description": "Beautiful weather app with animated backgrounds and detailed forecast data.",
-    "tags": [
-      "Swift",
-      "SwiftUI",
-      "WeatherKit"
-    ],
-    "image": "https://picsum.photos/seed/weather/800/600",
-    "platforms": {
-      "ios": "https://apps.apple.com/app/id333333",
-      "mac": "https://apps.apple.com/mac/app/id333333"
-    }
-  },
-  {
-    "name": "Fitness Tracker",
-    "description": "Workout companion app for tracking exercises, sets, and personal records.",
-    "tags": [
-      "Kotlin",
-      "Jetpack Compose",
-      "Room"
-    ],
-    "image": "https://picsum.photos/seed/fitness/800/600",
-    "platforms": {
-      "android": "https://play.google.com/store/apps/details?id=fitness.app"
+      "android": "https://play.google.com/store/apps/details?id=shop.app",
+      "web": "https://flagology.zheerbarzan.dev/"
     }
   }
 ]
