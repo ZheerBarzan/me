@@ -7,7 +7,7 @@
       "Vue.js",
       "Tailwind CSS"
     ],
-    "image": "images/Projects/QRcodism.png",
+    "image": "images/Projects/qrcodism.gif",
     "link": "https://qr-codism.zheerbarzan.dev/",
     "github_link": "https://github.com/ZheerBarzan/QRcodism",
     "platforms": {
@@ -23,7 +23,7 @@
       "Core Data",
       "RealityKit"
     ],
-    "image": "images/Projects/Project_Medusa.png",
+    "image": "images/Projects/project_Medusa.gif",
     "platforms": {
       "ios": "https://apps.apple.com/app/id123456789"
     }
@@ -35,7 +35,7 @@
       "Nuxt.js",
       "Tailwind CSS"
     ],
-    "image": "images/Projects/AUIS-Flowchart.png",
+    "image": "images/Projects/AUIS_Flowchart.gif",
     "platforms": {
       "web": "https://auis-flowchart.zheerbarzan.dev/"
     }
@@ -48,7 +48,7 @@
       "Dart",
       "Local Storage"
     ],
-    "image": "images/Projects/Habitology.png",
+    "image": "images/Projects/habitology.gif",
     "platforms": {
       "ios": "https://apps.apple.com/app/id111111",
       "android": "https://play.google.com/store/apps/details?id=news.app",
@@ -63,7 +63,7 @@
       "Flutter",
       "Dart"
     ],
-    "image": "images/Projects/Flagology.png",
+    "image": "images/Projects/flagology.gif",
     "platforms": {
       "ios": "https://apps.apple.com/app/id222222",
       "android": "https://play.google.com/store/apps/details?id=shop.app",
