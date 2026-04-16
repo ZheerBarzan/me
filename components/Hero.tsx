@@ -45,14 +45,19 @@ const Hero: React.FC = () => {
 
             {/* Call to Action Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-red-600 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-3 hover:bg-red-700 transition-all shadow-xl shadow-red-600/20 hover:shadow-red-600/40 group transform hover:-translate-y-1">
+              <a
+                href="/images/personal/zheer_barzan_CV.pdf"
+                download="zheer_barzan_CV.pdf"
+                className="bg-red-600 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-3 hover:bg-red-700 transition-all shadow-xl shadow-red-600/20 hover:shadow-red-600/40 group transform hover:-translate-y-1"
+              >
                 Download CV{" "}
                 <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-              </button>
+              </a>
               {/* View Github Button when i click on it it will open my github */}
-              <button
+              <a
                 href="https://github.com/ZheerBarzan"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white px-8 py-4 rounded-xl font-semibold hover:border-red-200 hover:bg-red-50 dark:hover:bg-zinc-800 hover:text-red-600 dark:hover:text-red-500 transition-all group flex items-center gap-2"
               >
                 View Github{" "}
@@ -60,7 +65,7 @@ const Hero: React.FC = () => {
                   size={16}
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                 />
-              </button>
+              </a>
             </div>
           </div>
 
