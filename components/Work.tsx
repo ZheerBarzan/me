@@ -37,13 +37,13 @@ export const ProjectCard: React.FC<ProjectProps> = ({
   github_link,
   platforms,
 }) => (
-  <div className="group relative w-full bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-red-200 dark:hover:border-red-900 hover:shadow-2xl hover:shadow-red-900/5 transition-all duration-500 flex flex-col">
+  <div className="group relative w-full max-w-[480px] bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-red-200 dark:hover:border-red-900 hover:shadow-2xl hover:shadow-red-900/5 transition-all duration-500 flex flex-col">
     {/* Image Container with Hover Overlay */}
-    <div className="h-[280px] overflow-hidden relative bg-zinc-100 dark:bg-zinc-800">
+    <div className="aspect-square overflow-hidden relative bg-zinc-50 dark:bg-zinc-800">
       <img
         src={image}
         alt={name}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-full object-contain"
       />
       {/* Overlay that appears on hover */}
       <div className="absolute inset-0 bg-zinc-900/0 group-hover:bg-zinc-900/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -141,7 +141,7 @@ const Work: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {/* limit projects to 4 */}
           {projects.slice(0, 4).map((project, index) => (
             <ProjectCard
