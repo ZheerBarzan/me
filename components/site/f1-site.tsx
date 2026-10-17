@@ -15,12 +15,12 @@ import {
   useVelocity,
 } from "motion/react";
 import { ChevronDown, Copy, Download } from "lucide-react";
-import { SkillIcon } from "@/components/skill-icon";
 import { socialLinks } from "@/components/social-links";
 import { monzaSvgPath } from "@/components/three/race/monza";
 import { journey, profile, skills, type TimelineEntry } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { RaceGame } from "./race-game";
+import { ToolkitRace } from "./toolkit-race";
 import { f, snap } from "./theme";
 
 const titillium = Titillium_Web({ subsets: ["latin"], weight: ["400", "600", "700", "900"], style: ["normal", "italic"], display: "swap" });
@@ -442,32 +442,19 @@ function Legend({ color, label }: { color: string; label: string }) {
   );
 }
 
-const compounds = [f.red, f.yellow, "#D4D4D8"];
-
-/** Skills as tyres on the setup sheet. */
+/** Skills as a field of race cars streaming across the track. */
 function Setup() {
   return (
-    <section id="setup" className="mx-auto max-w-6xl scroll-mt-12 px-4 py-24">
-      <SectionTitle kicker="CAR SETUP" title="Toolkit" />
-      <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
-        {skills.map((s, i) => (
-          <motion.li
-            key={s.name}
-            initial={{ scale: 0, rotate: -180 }}
-            whileInView={{ scale: 1, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ ...snap, delay: (i % 5) * 0.05 }}
-            whileHover={{ rotate: 30 }}
-            className="flex aspect-square flex-col items-center justify-center gap-2 rounded-full border-[12px] bg-[#1d1d24] p-4 text-center text-xs font-bold text-white"
-            style={{ borderColor: "#2a2a2a", outline: `3px solid ${compounds[i % compounds.length]}`, outlineOffset: "-16px" }}
-          >
-            <span className="flex size-8 items-center justify-center rounded-full bg-white">
-              <SkillIcon skill={s} />
-            </span>
-            {s.name}
-          </motion.li>
-        ))}
-      </ul>
+    <section id="setup" className="scroll-mt-12 py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <SectionTitle kicker="ON THE GRID" title="Toolkit" />
+        <p className="mt-4 text-lg opacity-70">
+          {skills.length} tools on the grid. Hover a lane to hold it.
+        </p>
+      </div>
+      <div className="mx-auto mt-10 max-w-6xl px-4">
+        <ToolkitRace />
+      </div>
     </section>
   );
 }

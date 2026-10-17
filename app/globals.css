@@ -774,3 +774,14 @@ html {
   background: var(--brand);
   color: var(--brand-foreground);
 }
+
+/* Toolkit lanes: cars drive left to right; the list holds two copies, so
+   sliding by half its width loops seamlessly. */
+@keyframes race-lane {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
