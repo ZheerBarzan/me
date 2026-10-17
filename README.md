@@ -1,21 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# zheerbarzan.dev
 
-# Run and deploy your AI Studio app
+Portfolio of Zheer Barzan, built with Next.js 16 (App Router, Cache Components),
+[Motion](https://motion.dev) and [Fluid Functionalism](https://www.fluidfunctionalism.com).
 
-This contains everything you need to run your app locally.
+```bash
+pnpm install
+pnpm dev
+```
 
-View your app in AI Studio: https://ai.studio/apps/drive/1VZsOpvAHdPqChDiwXFnbHki8rJN-SuzO
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-# me
+- Content (projects, education, career, awards, skills): `lib/content.ts`
+- The site is a race weekend: `components/site/f1-site.tsx` (2D, white) with
+  the projects section as a drivable lap of a Monza-style circuit
+  (`components/site/race-game.tsx`, 3D scene in `components/three/race/`).
+- Circuit layout and corner names: `components/three/race/monza.ts`.
+- Colors: `components/site/theme.ts`.
+- The previous Vite site is preserved at the `legacy-vite` tag; screenshots of
+  it are in `docs/legacy/`.
