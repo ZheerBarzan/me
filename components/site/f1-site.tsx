@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import { Titillium_Web } from "next/font/google";
 import {
@@ -14,11 +14,11 @@ import {
   useTransform,
   useVelocity,
 } from "motion/react";
-import { Copy, Download } from "lucide-react";
+import { ChevronDown, Copy, Download } from "lucide-react";
 import { SkillIcon } from "@/components/skill-icon";
 import { socialLinks } from "@/components/social-links";
 import { monzaSvgPath } from "@/components/three/race/monza";
-import { journey, profile, skills } from "@/lib/content";
+import { journey, profile, skills, type TimelineEntry } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { RaceGame } from "./race-game";
 import { f, snap } from "./theme";
@@ -46,7 +46,7 @@ export function F1Site() {
       <TrackMap />
       <main>
         <Hero ready={ready} />
-        <TimingTower />
+        <Standings />
         <Setup />
         <section id="garage" className="scroll-mt-12 py-24">
           <div className="mx-auto max-w-6xl px-4">
@@ -321,43 +321,116 @@ function SectionTitle({ kicker, title }: { kicker: string; title: string }) {
   );
 }
 
-/** The journey as a TV timing tower. */
-function TimingTower() {
+/** Two timing towers, education and career. Click a row for the full story. */
+function Standings() {
+  const education = journey.filter((e) => e.kind !== "career");
+  const career = journey.filter((e) => e.kind === "career");
   return (
-    <section id="standings" className="mx-auto max-w-4xl scroll-mt-12 px-4 py-24">
+    <section id="standings" className="mx-auto max-w-6xl scroll-mt-12 px-4 py-24">
       <SectionTitle kicker="SESSION RESULTS" title="Standings" />
-      <ol className="mt-10 overflow-hidden rounded-xl border bg-white shadow-sm" style={{ borderColor: f.line }}>
-        {journey.map((e, i) => (
-          <motion.li
-            key={e.title + e.period}
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-5%" }}
-            transition={{ ...snap, delay: i * 0.06 }}
-            className="grid grid-cols-[44px_6px_1fr_auto] items-center gap-3 border-b px-3 py-3 last:border-0 hover:bg-black/[0.03]"
-            style={{ borderColor: f.line }}
-          >
-            <span className="text-center text-lg font-black tabular-nums italic">P{i + 1}</span>
-            <span className="h-8 w-1.5 rounded" style={{ background: teamColor[e.kind] }} />
-            <div className="min-w-0">
-              <p className="truncate font-bold">{e.title}</p>
-              <p className="truncate text-sm opacity-60">{e.place}</p>
-            </div>
-            <div className="flex items-center gap-2">
-              {e.kind === "award" && (
-                <span className="rounded px-1.5 py-0.5 text-[11px] font-black text-white" style={{ background: f.purple }}>
-                  FASTEST
-                </span>
-              )}
-              <span className="font-mono text-sm tabular-nums opacity-70">{e.period}</span>
-            </div>
-          </motion.li>
-        ))}
-      </ol>
-      <p className="mt-3 flex gap-4 text-xs opacity-60">
-        <Legend color={f.red} label="Career" /> <Legend color="#2563EB" label="Education" /> <Legend color={f.purple} label="Awards" />
+      <p className="mt-4 text-lg opacity-70">Tap a row to see the details.</p>
+      <div className="mt-10 grid items-start gap-8 md:grid-cols-2">
+        <TimingTower title="Education" subtitle="Degrees and awards" color={teamColor.education} entries={education} />
+        <TimingTower title="Career" subtitle="Roles, most recent first" color={teamColor.career} entries={career} />
+      </div>
+      <p className="mt-4 flex gap-4 text-xs opacity-60">
+        <Legend color={f.red} label="Career" /> <Legend color="#2563EB" label="Education" /> <Legend color={f.purple} label="Award · ranked 1st" />
       </p>
     </section>
+  );
+}
+
+/** A TV-style timing tower whose rows open to show their description. */
+function TimingTower({
+  title,
+  subtitle,
+  color,
+  entries,
+}: {
+  title: string;
+  subtitle: string;
+  color: string;
+  entries: TimelineEntry[];
+}) {
+  const [open, setOpen] = useState<number | null>(null);
+  const id = useId();
+  return (
+    <div className="overflow-hidden rounded-xl border bg-white shadow-sm" style={{ borderColor: f.line }}>
+      <div className="flex items-baseline justify-between px-4 py-3 text-white" style={{ background: f.ink }}>
+        <h3 className="flex items-center gap-2 text-xl font-black italic">
+          <span className="h-5 w-1.5 rounded" style={{ background: color }} />
+          {title.toUpperCase()}
+        </h3>
+        <span className="text-xs font-bold opacity-60">{subtitle.toUpperCase()}</span>
+      </div>
+      <ol>
+        {entries.map((e, i) => {
+          const isOpen = open === i;
+          const panel = `${id}-${i}`;
+          return (
+            <motion.li
+              key={e.title + e.period}
+              initial={{ x: -60, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-5%" }}
+              transition={{ ...snap, delay: i * 0.06 }}
+              className="border-b last:border-0"
+              style={{ borderColor: f.line }}
+            >
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={panel}
+                onClick={() => setOpen(isOpen ? null : i)}
+                className={cn(
+                  "grid w-full grid-cols-[40px_6px_1fr_auto] items-center gap-3 px-3 py-3 text-left transition-colors",
+                  isOpen ? "bg-black/[0.04]" : "hover:bg-black/[0.03]"
+                )}
+              >
+                <span className="text-center text-lg font-black tabular-nums italic">P{i + 1}</span>
+                <span className="h-8 w-1.5 rounded" style={{ background: teamColor[e.kind] }} />
+                <span className="min-w-0">
+                  <span className="block truncate font-bold">{e.title}</span>
+                  <span className="block truncate text-sm opacity-60">{e.place}</span>
+                </span>
+                <span className="flex items-center gap-2">
+                  {e.kind === "award" && (
+                    <span className="rounded px-1.5 py-0.5 text-[11px] font-black text-white" style={{ background: f.purple }}>
+                      FASTEST
+                    </span>
+                  )}
+                  <span className="hidden font-mono text-sm tabular-nums opacity-70 sm:inline">{e.period}</span>
+                  <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={snap} className="opacity-50">
+                    <ChevronDown className="size-4" aria-hidden="true" />
+                  </motion.span>
+                </span>
+              </button>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    id={panel}
+                    role="region"
+                    aria-label={`${e.title} details`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0, transition: { duration: 0.15 } }}
+                    transition={snap}
+                    className="overflow-hidden"
+                  >
+                    <div className="flex flex-col gap-2 border-l-4 py-3 pr-4 pl-[60px]" style={{ borderColor: teamColor[e.kind], background: f.panel }}>
+                      <p className="font-mono text-xs font-bold opacity-60">
+                        {e.period} · {e.place}
+                      </p>
+                      <p className="leading-relaxed">{e.description}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.li>
+          );
+        })}
+      </ol>
+    </div>
   );
 }
 
